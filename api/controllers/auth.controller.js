@@ -40,7 +40,6 @@ export const signin = async (req, res, next) => {
       .cookie("access_token", token, {
         httpOnly: true,
         expires: expiryDate,
-        sameSite: "Strict",
         secure: true,
       })
       .status(200)
@@ -61,7 +60,6 @@ export const google = async (req, res, next) => {
         .cookie("access_token", token, {
           httpOnly: true,
           expires: expiryDate,
-          sameSite: "Strict",
           secure: true,
         })
         .status(200)
@@ -90,7 +88,6 @@ export const google = async (req, res, next) => {
         .cookie("access_token", token, {
           httpOnly: true,
           expires: expiryDate,
-          sameSite: "Strict",
           secure: true,
         })
         .status(200)
@@ -106,7 +103,6 @@ export const signout = async (req, res) => {
   res
     .clearCookie("access_token", {
       httpOnly: true,
-      sameSite: "Strict",
       secure: true,
     })
     .status(200)
